@@ -1,0 +1,33 @@
+
+.reveal-up {
+  animation: slideUp 1s ease forwards;
+  opacity: 0;
+}
+.reveal-down {
+  animation: slideDown 1s ease forwards;
+  opacity: 0;
+}
+@keyframes slideUp {
+  0% { transform: translateY(50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes slideDown {
+  0% { transform: translateY(-50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+
+#musicToggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #111;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 9999;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}

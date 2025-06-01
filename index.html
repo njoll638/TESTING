@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Farin Shop - Home
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.5/cdn.min.js">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+  background-image: url('https://i.ibb.co/0RpCGZTh/IMG-20250206-WA0055.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: radial-gradient(circle at top, #1e3a8a, #0f172a, #000000);
+      background-size: 400% 400%;
+      animation: bgMove 20s ease infinite;
+      z-index: -1;
+      opacity: 0.6;
+    }
+    @keyframes bgMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    .glow-text {
+      background: linear-gradient(to right, #3b82f6, #9333ea);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 4s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #3b82f6; }
+      to { text-shadow: 0 0 20px #9333ea; }
+    }
+  </style>
+  <link href="css/style.css" rel="stylesheet"/>
+  <script src="https://unpkg.com/scrollreveal">
+  </script>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body class="text-white font-sans min-h-screen">
+  <!-- Navbar dengan dropdown animasi -->
+  <header class="bg-black/60 backdrop-blur-md fixed w-full top-0 z-50 shadow-lg" x-data="{ open: false }">
+   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between reveal-left">
+    <h1 class="text-2xl font-bold text-blue-400">
+     FarinShop
+    </h1>
+    <!-- Hamburger Button -->
+    <div class="md:hidden z-50">
+     <button @click="open = !open" class="relative w-8 h-8 focus:outline-none reveal-btn">
+      <span :class="{'rotate-45 translate-y-1.5': open}" class="block w-8 h-0.5 bg-white transform transition duration-300">
+      </span>
+      <span :class="{'opacity-0': open}" class="block w-8 h-0.5 bg-white mt-1.5 transform transition duration-300">
+      </span>
+      <span :class="{'-rotate-45 -translate-y-1.5': open}" class="block w-8 h-0.5 bg-white mt-1.5 transform transition duration-300">
+      </span>
+     </button>
+    </div>
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex gap-6 text-lg font-semibold">
+     <a class="hover:text-blue-500 transition" href="home.html">
+      Home
+     </a>
+     <a class="hover:text-blue-500 transition" href="produk.html">
+      Produk
+     </a>
+     <a class="hover:text-blue-500 transition" href="payment.html">
+      Payment
+     </a>
+     <a class="hover:text-blue-500 transition" href="kontak-admin.html">
+      Kontak Admin
+     </a>
+    </nav>
+   </div>
+   <!-- Mobile Dropdown Nav -->
+   <div class="md:hidden bg-black/90 backdrop-blur-sm text-center text-lg font-semibold px-6 py-4 space-y-4 reveal-right" x-show="open" x-transition:enter="transition ease-out duration-300" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:enter-start="opacity-0 transform -translate-y-4" x-transition:leave="transition ease-in duration-200" x-transition:leave-end="opacity-0 transform -translate-y-4" x-transition:leave-start="opacity-100 transform translate-y-0">
+    <a @click="open = false" class="block text-white hover:text-blue-400" href="home.html">
+     Home
+    </a>
+    <a @click="open = false" class="block text-white hover:text-blue-400" href="produk.html">
+     Produk
+    </a>
+    <a @click="open = false" class="block text-white hover:text-blue-400" href="payment.html">
+     Payment
+    </a>
+    <a @click="open = false" class="block text-white hover:text-blue-400" href="kontak-admin.html">
+     Kontak Admin
+    </a>
+   </div>
+  </header>
+  <!-- Hero Section -->
+  <main class="pt-32 text-center px-6">
+   <h2 class="text-5xl font-extrabold glow-text drop-shadow-lg reveal-left">
+    Selamat Datang di Farin Shop
+   </h2>
+   <p class="mt-4 text-lg text-gray-200 reveal-bottom">
+    Layanan sosial media terpercaya untuk kebutuhan digitalmu.
+    <br/>
+   </p>
+   <div class="mt-10 flex justify-center gap-4 flex-wrap reveal-left">
+    <div class="bg-white/10 p-6 rounded-xl shadow-lg backdrop-blur-md max-w-xs w-full hover:scale-105 transition">
+     <h3 class="text-xl font-bold text-blue-400 mb-2">
+      Aman &amp; Terpercaya
+     </h3>
+     <p class="text-sm text-gray-300">
+      Kami berpengalaman dan dipercaya oleh ribuan pelanggan di seluruh Indonesia.
+     </p>
+    </div>
+    <div class="bg-white/10 p-6 rounded-xl shadow-lg backdrop-blur-md max-w-xs w-full hover:scale-105 transition reveal-bottom">
+     <h3 class="text-xl font-bold text-blue-400 mb-2">
+      Respon Cepat
+     </h3>
+     <p class="text-sm text-gray-300">
+      Kami siap melayani dan membalas pesanmu dengan cepat dan ramah.
+     </p>
+    </div>
+   </div>
+   <a class="mt-10 inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-700 hover:to-blue-700 text-white text-lg rounded-full shadow-lg transition-all" href="produk.html">
+    Lihat Produk
+   </a>
+  </main>
+  <script src="js/script.js">
+  </script>
+  <script src="script.js">
+  </script>
+  <audio autoplay="" hidden="" id="backgroundMusic" loop="">
+   <source src="https://cdn.pixabay.com/audio/2023/10/02/audio_dce8f0a2f6.mp3" type="audio/mpeg"/>
+   Your browser does not support the audio element.
+  </audio>
+  <button id="musicToggle" onclick="toggleMusic()">
+   🔊 Musik
+  </button>
+ </body>
+</html>
